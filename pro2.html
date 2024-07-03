@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>VR/AR 기술기반의 실감형 콘텐츠 제작전문과정 커리큘럼</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">[K-Digital Training] VR/AR기술기반의 실감형콘텐츠 제작전문과정</h1>
+        <h3 style="text-align: center;"> 교육기간 : 2024.04.18 ~ 2024.11.18</h3>
+        <h3 style="text-align: center;" id="DDay">남은 교육기간 :</h3>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><h3><a href="First.html">홈으로</a></h3></li>
+            <li><h3><a href="pro1.html">K-Digital Training</a></h3></li>
+            <li><h3><a href="pro2.html">VR/AR 기술기반의 실감형 콘텐츠 제작전문과정 커리큘럼</a></h3></li>
+            <li><h3><a href="main.html" onclick="alert('게임 체험으로 이동합니다.');">게임 체험</a></h3></li>
+        </ul>
+    </nav>
+    <hr>
+    <section>
+        <div class="div-pro2-img1">
+            <img src="img/pro2-img1.png">
+        </div>
+        <h1 style="text-align: center;">세부 시간표 추후 업로드 예정</h1>
+    </section>
+    <script>
+        function find_day() {
+            const DDay = document.getElementById("DDay");
+            const endDate = new Date("2024-11-18");  // 디데이 설정
+            const today = new Date();  // 현재 날짜
+            const day_gap = endDate - today;  // 종료일까지 남은 밀리세컨드 초 값
+            const day = Math.floor(day_gap / (1000 * 60 * 60 * 24));  // 남은 일수 계산
+            DDay.innerText = `남은 교육기간 : ${day}일`;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            find_day();  // 페이지 로드 시 초기 디데이 계산
+            setInterval(find_day, 1000);  // 초마다 디데이 기능 실행
+        });
+    </script>
+</body>
+</html>

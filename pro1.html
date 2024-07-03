@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>K-Digital Training</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">[K-Digital Training] VR/AR기술기반의 실감형콘텐츠 제작전문과정</h1>
+        <h3 style="text-align: center;"> 교육기간 : 2024.04.18 ~ 2024.11.18</h3>
+        <h3 style="text-align: center;" id="DDay">남은 교육기간 :</h3>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><h3><a href="First.html">홈으로</a></h3></li>
+            <li><h3><a href="pro1.html">K-Digital Training</a></h3></li>
+            <li><h3><a href="pro2.html">VR/AR 기술기반의 실감형 콘텐츠 제작전문과정 커리큘럼</a></h3></li>
+            <li><h3><a href="main.html" onclick="alert('게임 체험으로 이동합니다.');">게임 체험</a></h3></li>
+        </ul>
+    </nav>
+    <hr>
+    <section>
+        <div class="div-pro-img1">
+            <img src="img/pro1-img1.png">
+        </div>
+        <dd style="text-align: center;">
+            <h3 style="text-align: center;">
+            <b>K-Digital Training</b>은 고용노동부가 전담하여 청년 취업희망자를 대상으로 실무 프로젝트 중심의 교육을 제공하여<br>
+            디지털 신기술 훈련분야 (빅데이터, 실감콘텐츠, 인공지능, 사물인터넷, 스마트 제조, 클라우드, 컴퓨팅, 정보보안, 핀테크, 무인이동체 등)<br>
+            현장 프로젝트 수행 역량을 갖춘 실무인재를 양성하는 사업입니다.<br>
+            대구국비지원 무료교육 본교의 본 과정을 통해 가상현실 콘텐츠를 기획, 디자인, 프로그래밍 능력과 실무제작 기술을 함양하고<br>
+            산업현장에서 바로 적용할 수 있는 능력을 갖출 수 있도록 지원하고 있습니다.</h3>
+        </dd>
+        <div class="div-pro-img2">
+            <img src="img/pro1-img2.png">
+        </div>
+    </section>
+    <script>
+        function find_day() {
+            const DDay = document.getElementById("DDay");
+            const endDate = new Date("2024-11-18");  // 디데이 설정
+            const today = new Date();  // 현재 날짜
+            const day_gap = endDate - today;  // 종료일까지 남은 밀리세컨드 초 값
+            const day = Math.floor(day_gap / (1000 * 60 * 60 * 24));  // 남은 일수 계산
+            DDay.innerText = `남은 교육기간 : ${day}일`;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            find_day();  // 페이지 로드 시 초기 디데이 계산
+            setInterval(find_day, 1000);  // 초마다 디데이 기능 실행
+        });
+    </script>
+</body>
+</html>

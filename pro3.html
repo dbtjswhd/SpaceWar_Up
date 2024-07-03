@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>익명게시판</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">[K-Digital Training] VR/AR기술기반의 실감형콘텐츠 제작전문과정</h1>
+        <h3 style="text-align: center;"> 교육기간 : 2024.04.18 ~ 2024.11.18</h3>
+        <h3 style="text-align: center;" id="DDay">남은 교육기간 :</h3>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><h3><a href="First.html">홈으로</a></h3></li>
+            <li><h3><a href="pro1.html">K-Digital Training</a></h3></li>
+            <li><h3><a href="pro2.html">VR/AR 기술기반의 실감형 콘텐츠 제작전문과정 커리큘럼</a></h3></li>
+            <li><h3><a href="main.html" onclick="alert('게임 체험으로 이동합니다.');">게임 체험</a></h3></li>
+        </ul>
+    </nav>
+    <hr>
+    <section>
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Test</td>
+                    <td>익명</td>
+                    <td>2024.06.17</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            
+            <hr>
+            <div class="function-wrap">
+                <div class="function-btn-box">
+                    <button class="btn-write" onclick="location.href ='write.html';">🖋 글쓰기</button>
+                </div>
+            </div>  
+        </div>      
+    </section>
+    <script>
+        function find_day() {
+            const DDay = document.getElementById("DDay");
+            const endDate = new Date("2024-11-18");  // 디데이 설정
+            const today = new Date();  // 현재 날짜
+            const day_gap = endDate - today;  // 종료일까지 남은 밀리세컨드 초 값
+            const day = Math.floor(day_gap / (1000 * 60 * 60 * 24));  // 남은 일수 계산
+            DDay.innerText = `남은 교육기간 : ${day}일`;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            find_day();  // 페이지 로드 시 초기 디데이 계산
+            setInterval(find_day, 1000);  // 초마다 디데이 기능 실행
+        });
+    </script>
+</body>
+</html>
